@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const starships_controllet_1 = require("../controllers/starships.controllet");
+const router = (0, express_1.Router)();
+router.get("/", starships_controllet_1.getStarships);
+router.get("/:id", starships_controllet_1.getStarshipsById);
+router.post("/", starships_controllet_1.createStarship);
+router.put("/:id", starships_controllet_1.updateStarship);
+router.delete("/:id", starships_controllet_1.deleteStarship);
+exports.default = router;

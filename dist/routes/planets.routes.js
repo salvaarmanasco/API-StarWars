@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const planets_controllet_1 = require("../controllers/planets.controllet");
+const router = (0, express_1.Router)();
+router.get("/", planets_controllet_1.getPlanet);
+router.get("/:id", planets_controllet_1.getPlanetsById);
+router.post("/", planets_controllet_1.createPlanet);
+router.put("/:id", planets_controllet_1.updatePlanet);
+router.delete("/:id", planets_controllet_1.deletePlanet);
+exports.default = router;
